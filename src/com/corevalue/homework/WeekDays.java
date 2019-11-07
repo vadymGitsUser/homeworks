@@ -45,4 +45,13 @@ public enum WeekDays {
     };
 
     public abstract String getNextDay();
+
+    /*
+    Concrete method with realization by Ordinal()
+     */
+    public WeekDays getNextDayByOrdinal() {
+        int currentDayPosition = this.ordinal();
+        return (currentDayPosition == WeekDays.values().length -1) ?
+                WeekDays.values()[0] : WeekDays.values()[currentDayPosition + 1];
+    }
 }
